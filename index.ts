@@ -1,12 +1,12 @@
 import * as express from "express";
 const app = express();
 const port = process.env.PORT || 3000;
+import "dotenv/config";
+const dev = process.env.NODE_ENV == "deveploment";
 
-// console.log(process.env);
-
-app.get("/hola", (req, res) => {
+app.get("/env", (req, res) => {
   res.json({
-    message: "hola esto es una prueba",
+    environment: process.env.NODE_ENV,
   });
 });
 
