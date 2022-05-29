@@ -10,6 +10,12 @@ app.get("/env", (req, res) => {
   });
 });
 
+app.get("/db-env", (req, res) => {
+  res.json({
+    "db-host": process.env.DB_HOST,
+  });
+});
+
 app.listen(port, () => {
   console.log("port: " + port);
 });
